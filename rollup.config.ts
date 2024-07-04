@@ -14,7 +14,7 @@ export default defineConfig({
   cache: true,
   plugins: [
     copy({
-      assets: ["src/icon.png", "src/info.json"],
+      assets: ["src/icon.png", "src/info.json", "src/appcast.json"],
     }),
     typescript(),
   ],
