@@ -1,0 +1,10 @@
+{
+  "identifier": "caico-bob-plugin-ollama-explainer",
+  "version": "1.0.0",
+  "category": "translate",
+  "name": "Ollama Explainer",
+  "summary": "An explainer plugin using the ollama model for Bob",
+  "author": "CaicoLeung",
+  "homepage": "https://github.com/CaicoLeung/bob-plugin-ollama-explainer",
+  "minBobVersion": "1.8.0"
+}
