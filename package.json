@@ -1,10 +1,11 @@
 {
   "name": "bob-plugin-ollama-explainer",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "build": "rollup --config rollup.config.ts --configPlugin typescript"
+    "deploy": "pnpm run build && pnpm run zip && open ./dist",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "zip": "ts-node --project tsconfig.dev.json ./scripts/zip.ts"
   },
   "devDependencies": {
     "typescript": "^5.2.2"
@@ -12,10 +13,13 @@
   "dependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/adm-zip": "^0.5.5",
+    "adm-zip": "^0.5.14",
     "rollup": "^4.18.0",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-compression": "^1.0.3",
     "rollup-plugin-copy-assets": "^2.0.3",
-    "rollup-plugin-zip": "^1.0.3"
+    "rollup-plugin-zip": "^1.0.3",
+    "ts-node": "^10.9.2"
   }
 }
