@@ -1,5 +1,5 @@
 {
-  "identifier": "caico-bob-plugin-ollama-translator",
+  "identifier": "bob-plugin-ollama-translator",
   "version": "1.0.0",
   "category": "translate",
   "name": "Ollama模型翻译",
