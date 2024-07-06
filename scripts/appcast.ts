@@ -1,8 +1,22 @@
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
+import packageJson from "../package.json";
+import infoJson from "../src/info.json";
+import appcastJson from "../appcast.json";
+import inquirer from "inquirer";
+import chalk from "chalk";
 
-export default function hex(file: string) {
+interface AppcastVersion {
+  version: string;
+  desc: string;
+  sha256: string;
+  url: string;
+  minBobVersion: string;
+  timestamp: number;
+}
+
+export default function hex(file: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const dist = path.join(process.cwd(), "dist");
     const pluginPath = path.join(dist, file);
@@ -21,7 +35,55 @@ export default function hex(file: string) {
     });
 
     fileStream.on("error", (err) => {
-      return reject(err);
+      return reject(err.message);
     });
   });
+}
+
+export async function appcast(filename: string) {
+  const version = packageJson.version;
+  const zipHash = await hex(filename);
+
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "version",
+        message: `Current version: ${version}. Enter new version:`,
+      },
+      {
+        type: "input",
+        name: "desc",
+        message: "Enter this version description:",
+      },
+      {
+        type: "confirm",
+        name: "confirm",
+        message: "Are you sure?",
+        choices: ["confirm", "cancel"],
+      },
+    ])
+    .then((answers: any) => {
+      if (answers.confirm) {
+        const downloadUrl = `${infoJson.homepage}/releases/download/${answers.version}/bob-plugin-ollama-translator.bobplugin`;
+        const appcastVersion: AppcastVersion = {
+          version: answers.version,
+          desc: answers.desc,
+          sha256: zipHash,
+          url: downloadUrl,
+          minBobVersion: infoJson.minBobVersion,
+          timestamp: Date.now(),
+        };
+        console.log(chalk.green("Appcast Version:"));
+        console.log(chalk.blue(JSON.stringify(appcastVersion, null, 2)));
+        const appcast = {
+          identifier: infoJson.identifier,
+          versions: [...appcastJson.versions, appcastVersion],
+        };
+        const appcastPath = path.join(process.cwd(), "appcast.json");
+        fs.writeFileSync(appcastPath, JSON.stringify(appcast, null, 2));
+      } else {
+        console.log(chalk.red("Aborted"));
+      }
+    });
 }

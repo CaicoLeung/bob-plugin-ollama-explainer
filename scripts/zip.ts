@@ -1,11 +1,13 @@
 import AdmZip from "adm-zip";
 import hex from "./appcast";
+import path from "node:path";
 
-const homedir = process.cwd();
-const admZip = new AdmZip();
-admZip.addLocalFolder(homedir + "/dist");
-admZip.writeZip(homedir + "/dist/bob-plugin-ollama-explainer.bobplugin", async () => {
-  console.log("bob-plugin-ollama-explainer.bobplugin created");
-  console.log("hash256: " + (await hex("bob-plugin-ollama-explainer.bobplugin")));
-  // TODO
-});
+export async function zip(filename: string) {
+  const homedir = process.cwd();
+  const admZip = new AdmZip();
+  const outDir = path.join(homedir, "dist");
+  admZip.addLocalFolder(outDir);
+  admZip.writeZip(`${outDir}/${filename}`, async () => {
+    console.log(filename + " hash256: " + (await hex(filename)));
+  });
+}

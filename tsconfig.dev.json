@@ -8,6 +8,7 @@
 
     /* Bundler mode */
     "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "esModuleInterop": true,
@@ -19,11 +20,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
   },
   "include": ["scripts"],
   "exclude": ["src"]
