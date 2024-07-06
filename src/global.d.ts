@@ -9,7 +9,7 @@ declare const $http: {
   streamRequest: <T>(params: {
     method: "GET" | "POST" | "PUT" | "DELETE";
     url: string;
-    headers?: Record<string, string>;
+    header?: Record<string, string>;
     body: any;
     files?: File[];
     timeout?: number;
