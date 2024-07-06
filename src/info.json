@@ -5,7 +5,7 @@
   "name": "Ollama模型翻译",
   "summary": "调用本地Ollama模型进行翻译，支持多语言翻译，离线使用",
   "author": "CaicoLeung",
-  "homepage": "https://github.com/CaicoLeung/bob-plugin-ollama-explainer",
-  "appcast": "https://github.com/CaicoLeung/bob-plugin-ollama-explainer/raw/main/appcast.json",
+  "homepage": "https://github.com/CaicoLeung/bob-plugin-ollama-translator",
+  "appcast": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/raw/main/appcast.json",
   "minBobVersion": "1.8.0"
 }
