@@ -3,6 +3,34 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/CaicoLeung/bob-plugin-ollama-translator",
+  "main": "dist/main.js",
+  "author": {
+    "name": "CaicoLeung",
+    "url": "https://github.com/CaicoLeung",
+    "email": "lkk1053190902@gmail.com",
+    "github": "CaicoLeung"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "bob-plugin",
+    "ollama",
+    "translator"
+  ],
+  "description": "调用本地Ollama模型进行翻译，支持多语言翻译，离线使用",
   "scripts": {
     "tsc": "rollup --config rollup.config.ts --configPlugin typescript",
     "tsx": "tsx --tsconfig tsconfig.dev.json ./scripts/build.ts",
