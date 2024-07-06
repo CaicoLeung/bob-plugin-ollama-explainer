@@ -1,5 +1,5 @@
 {
-  "name": "bob-plugin-ollama-explainer",
+  "name": "bob-plugin-ollama-translator",
   "private": true,
   "version": "1.0.0",
   "scripts": {
