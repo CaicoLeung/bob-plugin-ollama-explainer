@@ -1,11 +1,68 @@
 {
   "identifier": "bob-plugin-ollama-translator",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "category": "translate",
   "name": "Ollama模型翻译",
   "summary": "调用本地Ollama模型进行翻译，支持多语言翻译，离线使用",
   "author": "CaicoLeung",
   "homepage": "https://github.com/CaicoLeung/bob-plugin-ollama-translator",
   "appcast": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/raw/main/appcast.json",
-  "minBobVersion": "1.8.0"
+  "minBobVersion": "1.8.0",
+  "options": [
+    {
+      "identifier": "prompt",
+      "type": "text",
+      "title": "prompt",
+      "desc": "自定义prompt模式，在这里输入你的prompt。源语言为{sourceLang}，目标语言为{targetLang}，原文为{sourceText}。",
+      "textConfig": {
+        "placeholderText": "请输入prompt"
+      }
+    },
+    {
+      "identifier": "model",
+      "type": "menu",
+      "title": "模型",
+      "defaultValue": "llama3:latest",
+      "desc": "选择Ollama模型, 确保你已经安装相应模型。",
+      "menuValues": [
+        {
+          "title": "llama3:latest",
+          "value": "llama3:latest"
+        },
+        {
+          "title": "llama3:70b",
+          "value": "llama3:70b"
+        },
+        {
+          "title": "qwen2:latest",
+          "value": "qwen2:latest"
+        },
+        {
+          "title": "gemma2:9b",
+          "value": "gemma2:9b"
+        },
+        {
+          "title": "gemma2:27b",
+          "value": "gemma2:27b"
+        },
+        {
+          "title": "qwen2:1.5b",
+          "value": "qwen2:1.5b"
+        },
+        {
+          "title": "自定义",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "identifier": "customModel",
+      "type": "text",
+      "title": "自定义模型",
+      "textConfig": {
+        "placeholderText": "例如: mistral:7b"
+      },
+      "desc": "仅当模型为自定义时生效"
+    }
+  ]
 }

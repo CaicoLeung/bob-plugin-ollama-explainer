@@ -1,20 +1,20 @@
 import { SupportLanguages } from "./lang";
-import { LLama3Response, Query } from "./types";
+import { OllamaResponse, Query } from "./types";
+import { currentModel, generatePrompt } from "./utils";
 
 let buffer = "";
 
 function translate(query: Query) {
-  const { text, detectTo, detectFrom } = query;
   try {
+    const model = currentModel();
+    const prompt = generatePrompt(query);
     const params = {
       stream: true,
-      model: "llama3",
-      prompt: `You are a translation engine, translate from ${detectFrom} to ${detectTo} directly without explanation and any explanatory content.\n
-      ${text}
-      `,
+      model: model,
+      prompt: prompt,
     };
-    $log.info(`Prompt: ${params.prompt}`);
-    $http.streamRequest<LLama3Response>({
+
+    $http.streamRequest<OllamaResponse>({
       method: "POST",
       url: "http://localhost:11434/api/generate",
       timeout: 80,
@@ -24,12 +24,10 @@ function translate(query: Query) {
       },
       body: params,
       streamHandler(stream) {
-        $log.info(`Response: ${stream.text}`);
-        const result = JSON.parse(stream.text) as LLama3Response;
+        const result = JSON.parse(stream.text) as OllamaResponse;
         buffer += result.response;
       },
       handler() {
-        $log.info(`buffer: ${buffer}`);
         query.onCompletion({
           result: {
             from: query.detectFrom,
@@ -41,6 +39,7 @@ function translate(query: Query) {
       },
     });
   } catch (error: any) {
+    $log.error(error);
     query.onCompletion({ error: error });
   }
 }

@@ -40,3 +40,8 @@ export const HttpErrorCodes = {
   510: "Not Extended",
   511: "Network Authentication Required",
 };
+
+export const SystemPrompt = `
+You are a translation engine, translate from {sourceLang} to {targetLang} directly without explanation and any explanatory content.
+{sourceText}
+`;

@@ -27,3 +27,7 @@ declare const $log: {
 declare const $data: {
   fromUTF8: (str: string) => string;
 };
+
+declare const $option: {
+  [K in import("./info.json")["options"][number]["identifier"]]: string;
+};
