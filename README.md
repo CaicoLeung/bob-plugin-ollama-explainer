@@ -8,6 +8,6 @@
 
 ## 支持功能
 1. 自定义配置Prompt
-2. 自定义配置模型（目前固定是llama3）
+2. 自定义配置模型
 
 <img width="510" alt="image" src="https://github.com/CaicoLeung/bob-plugin-ollama-translator/assets/36806569/55cd2824-c460-4913-b051-807c387634c3">
