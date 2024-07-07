@@ -78,6 +78,7 @@ export async function appcast(filename: string) {
         console.log(chalk.blue(JSON.stringify(appcastVersion, null, 2)));
         const appcast = {
           identifier: infoJson.identifier,
+          version: answers.version,
           versions: [...appcastJson.versions, appcastVersion],
         };
         const appcastPath = path.join(process.cwd(), "appcast.json");
