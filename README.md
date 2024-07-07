@@ -6,7 +6,8 @@
 
 <img width="450" alt="image" src="https://github.com/CaicoLeung/bob-plugin-ollama-translator/assets/36806569/28f6d4f8-0f62-42cd-9214-c767fd8d1270">
 
-## 后续更新
+## 支持功能
 1. 自定义配置Prompt
 2. 自定义配置模型（目前固定是llama3）
 
+<img width="510" alt="image" src="https://github.com/CaicoLeung/bob-plugin-ollama-translator/assets/36806569/55cd2824-c460-4913-b051-807c387634c3">
