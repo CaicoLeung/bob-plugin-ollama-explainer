@@ -1,6 +1,6 @@
 {
   "identifier": "bob-plugin-ollama-translator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "versions": [
     {
       "version": "1.0.1",
@@ -17,6 +17,14 @@
       "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.1.0/bob-plugin-ollama-translator.bobplugin",
       "minBobVersion": "1.8.0",
       "timestamp": 1720331495986
+    },
+    {
+      "version": "1.2.0",
+      "desc": "支持流式输出",
+      "sha256": "b00df78d1d042c9db837362005f15ca6e4ef829a094e54b29526e0def9ca2823",
+      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.2.0/bob-plugin-ollama-translator.bobplugin",
+      "minBobVersion": "1.8.0",
+      "timestamp": 1720425840939
     }
   ]
 }
