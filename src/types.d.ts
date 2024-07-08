@@ -12,8 +12,8 @@ export interface Query {
   detectFrom: string; // 检测过后的源语言，一定不是 auto，如果插件不具备检测语言的能力，可直接使用该属性。
   detectTo: string; // 检测过后的目标语言，一定不是 auto，如果插件不具备检测语言的能力，可直接使用该属性。
   cancelSignal: Signal;
-  onStream: (stream: Stream) => void; // 流式数据回调函数
-  onCompletion: ({ result, error }: { result?: any; error?: string }) => void; // 翻译完成回调函数
+  onStream: (stream: { result: TranslateResult }) => void; // 流式数据回调函数
+  onCompletion: ({ result, error }: { result?: TranslateResult; error?: string }) => void; // 翻译完成回调函数
 }
 
 export interface Signal {
@@ -29,8 +29,10 @@ export interface Stream {
 }
 
 export interface TranslateResult {
-  toParagraphs: string[];
-  toDict: ToDict;
+  from: string;
+  to: string;
+  toParagraphs?: string[];
+  toDict?: ToDict;
 }
 
 export interface ToDict {

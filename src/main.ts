@@ -25,16 +25,27 @@ function translate(query: Query) {
       body: params,
       streamHandler(stream) {
         const result = JSON.parse(stream.text) as OllamaResponse;
-        buffer += result.response;
+
+        if (!result.done) {
+          buffer += result.response;
+          query.onStream({
+            result: {
+              from: query.detectFrom,
+              to: query.detectTo,
+              toParagraphs: [buffer],
+            },
+          });
+        } else {
+          query.onCompletion({
+            result: {
+              from: query.detectFrom,
+              to: query.detectTo,
+              toParagraphs: [buffer],
+            },
+          });
+        }
       },
       handler() {
-        query.onCompletion({
-          result: {
-            from: query.detectFrom,
-            to: query.detectTo,
-            toParagraphs: [buffer],
-          },
-        });
         buffer = "";
       },
     });
