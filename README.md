@@ -4,10 +4,12 @@
 
 ## Bob效果展示
 
-<img width="450" alt="image" src="https://github.com/CaicoLeung/bob-plugin-ollama-translator/assets/36806569/28f6d4f8-0f62-42cd-9214-c767fd8d1270">
+<img width="446" alt="image" src="https://github.com/user-attachments/assets/e31c54a0-ee2b-44f6-b9cc-0c635b6fd9c4">
+
 
 ## 支持功能
 1. 自定义配置Prompt
 2. 自定义配置模型
 
-<img width="510" alt="image" src="https://github.com/CaicoLeung/bob-plugin-ollama-translator/assets/36806569/55cd2824-c460-4913-b051-807c387634c3">
+<img width="502" alt="image" src="https://github.com/user-attachments/assets/aac79845-1452-4028-8114-f05473d3edc0">
+
