@@ -2,7 +2,7 @@ interface Response<T> {
   data: T;
   rawData: any;
   error?: string;
-  response: (typeof $http)["streamRequest"];
+  response: any;
 }
 
 declare const $http: {

@@ -13,7 +13,7 @@ export interface Query {
   detectTo: string; // 检测过后的目标语言，一定不是 auto，如果插件不具备检测语言的能力，可直接使用该属性。
   cancelSignal: Signal;
   onStream: (stream: { result: TranslateResult }) => void; // 流式数据回调函数
-  onCompletion: ({ result, error }: { result?: TranslateResult; error?: string }) => void; // 翻译完成回调函数
+  onCompletion: ({ result, error }: { result?: TranslateResult; error?: { message: string, type: string, addition: string } }) => void; // 翻译完成回调函数
 }
 
 export interface Signal {

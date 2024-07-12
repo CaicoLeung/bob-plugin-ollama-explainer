@@ -1,3 +1,4 @@
+import { HttpErrorCodes } from "./constants";
 import { SupportLanguages } from "./lang";
 import { OllamaResponse, Query } from "./types";
 import { currentModel, generatePrompt } from "./utils";
@@ -45,7 +46,27 @@ function translate(query: Query) {
           });
         }
       },
-      handler() {
+      handler(result) {
+        const statusCode = result.response.statusCode as number;
+        if (statusCode >= 400 && statusCode < 500) {
+          if (`${statusCode}` in HttpErrorCodes) {
+            query.onCompletion({
+              error: {
+                type: "param",
+                message: `HttpError: ${HttpErrorCodes[`${statusCode}`]}`,
+                addition: `${statusCode}`,
+              },
+            });
+          }
+        } else {
+          query.onCompletion({
+              error: {
+                type: "unknown",
+                message: 'unknown',
+                addition: 'Unknown error',
+              },
+            });
+        }
         buffer = "";
       },
     });
