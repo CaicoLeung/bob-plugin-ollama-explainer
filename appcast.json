@@ -29,7 +29,7 @@
     {
       "version": "1.3.0",
       "desc": "更换图标;优化网络报错提示;",
-      "sha256": "115d77db03d2c36d33c2b74d6eec908e205a431ea1e7b39f4be47950b246ce14",
+      "sha256": "3b236133ad2a41e652e09cbb727efd869229fa145795caf6b952333d3cb32149",
       "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.3.0/bob-plugin-ollama-translator.bobplugin",
       "minBobVersion": "1.8.0",
       "timestamp": 1720774204951

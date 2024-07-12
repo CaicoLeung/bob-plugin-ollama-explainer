@@ -1,7 +1,6 @@
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-import packageJson from "../package.json";
 import infoJson from "../src/info.json";
 import appcastJson from "../appcast.json";
 import inquirer from "inquirer";
