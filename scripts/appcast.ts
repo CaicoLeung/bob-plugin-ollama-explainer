@@ -41,7 +41,7 @@ export default function hex(file: string): Promise<string> {
 }
 
 export async function appcast(filename: string) {
-  const version = packageJson.version;
+  const version = infoJson.version;
   const zipHash = await hex(filename);
 
   inquirer
@@ -81,8 +81,14 @@ export async function appcast(filename: string) {
           version: answers.version,
           versions: [...appcastJson.versions, appcastVersion],
         };
+        const info = {
+          ...infoJson,
+          version: answers.version,
+        };
         const appcastPath = path.join(process.cwd(), "appcast.json");
         fs.writeFileSync(appcastPath, JSON.stringify(appcast, null, 2));
+        const infoPath = path.join(process.cwd(), "src", "info.json");
+        fs.writeFileSync(infoPath, JSON.stringify(info, null, 2));
       } else {
         console.log(chalk.red("Aborted"));
       }
