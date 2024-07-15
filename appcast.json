@@ -3,20 +3,12 @@
   "version": "1.3.0",
   "versions": [
     {
-      "version": "1.0.1",
-      "desc": "优化prompt",
-      "sha256": "0af017dc2fb2329eee1e7ff1de604e766040199296511aeea9f27b2ff5338dd4",
-      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/release/bob-plugin-ollama-translator.bobplugin",
+      "version": "1.3.0",
+      "desc": "更换图标;优化网络报错提示;",
+      "sha256": "3b236133ad2a41e652e09cbb727efd869229fa145795caf6b952333d3cb32149",
+      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.3.0/bob-plugin-ollama-translator.bobplugin",
       "minBobVersion": "1.8.0",
-      "timestamp": 1720263202260
-    },
-    {
-      "version": "1.1.0",
-      "desc": "支持可配置prompt和model",
-      "sha256": "077ab26ddc0f923a0fc389da1110bb13541e008b311f6ad8f4f4fd618925450a",
-      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.1.0/bob-plugin-ollama-translator.bobplugin",
-      "minBobVersion": "1.8.0",
-      "timestamp": 1720331495986
+      "timestamp": 1720774204951
     },
     {
       "version": "1.2.0",
@@ -27,12 +19,20 @@
       "timestamp": 1720425840939
     },
     {
-      "version": "1.3.0",
-      "desc": "更换图标;优化网络报错提示;",
-      "sha256": "3b236133ad2a41e652e09cbb727efd869229fa145795caf6b952333d3cb32149",
-      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.3.0/bob-plugin-ollama-translator.bobplugin",
+      "version": "1.1.0",
+      "desc": "支持可配置prompt和model",
+      "sha256": "077ab26ddc0f923a0fc389da1110bb13541e008b311f6ad8f4f4fd618925450a",
+      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/1.1.0/bob-plugin-ollama-translator.bobplugin",
       "minBobVersion": "1.8.0",
-      "timestamp": 1720774204951
+      "timestamp": 1720331495986
+    },
+    {
+      "version": "1.0.1",
+      "desc": "优化prompt",
+      "sha256": "0af017dc2fb2329eee1e7ff1de604e766040199296511aeea9f27b2ff5338dd4",
+      "url": "https://github.com/CaicoLeung/bob-plugin-ollama-translator/releases/download/release/bob-plugin-ollama-translator.bobplugin",
+      "minBobVersion": "1.8.0",
+      "timestamp": 1720263202260
     }
   ]
 }

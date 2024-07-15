@@ -78,7 +78,7 @@ export async function appcast(filename: string) {
         const appcast = {
           identifier: infoJson.identifier,
           version: answers.version,
-          versions: [...appcastJson.versions, appcastVersion],
+          versions: [appcastVersion, ...appcastJson.versions],
         };
         const info = {
           ...infoJson,
